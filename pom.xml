@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jenkins_mavendemo</groupId>
+  <artifactId>jenkins_mavendemo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  
+  
+<properties>
+<suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
+</properties>
+
+      
+  <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.25.0</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.27.0</version>
+</dependency>
+
+
+
+  </dependencies>
+ 
+    
+    <build>
+
+<plugins>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.10.1</version>
+  <configuration>
+                <source>11</source>
+                <target>11</target>
+            </configuration> 
+</plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <mainClass>com.example.tests.Logintest</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+
+
+  <plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.17</version>
+
+<configuration>
+
+<suiteXmlFiles>
+<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+</suiteXmlFiles>
+
+</configuration>
+
+</plugin>
+
+</plugins>
+  </build>
+  </project>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
